@@ -1,4 +1,5 @@
-resource "aws_s3_bucket" "website-buckets"{
+
+resource "aws_s3_bucket" "s3_website_buckets"{
     count = length(var.s3_bucket_names)
     bucket = var.s3_bucket_names[count.index]
 }
@@ -11,3 +12,12 @@ resource "aws_s3_bucket_website_configuration" "s3_root_website"{
         protocol = "https"
     }
 }
+
+resource "aws_s3_bucket_website_configuration" "s3_subroot_website" {
+    bucket = var.s3_bucket_names[1]
+
+    index_document {
+      suffix = "index.html"
+    }
+}
+
