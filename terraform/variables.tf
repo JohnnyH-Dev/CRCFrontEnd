@@ -13,3 +13,15 @@ variable "rootdomain" {
     type    = string
     default = "johnnyhuang.dev"
 }
+
+variable "cert_arn" {
+  description = "ARN of AWS ACM certificate"
+  type = string
+  sensitive = true
+}
+
+variable "hosted_zone_id" {
+  description = "Hosted Zone ID for Route53"
+  type = string
+  sensitive = true
+}

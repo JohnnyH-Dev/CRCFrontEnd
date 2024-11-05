@@ -1,4 +1,3 @@
-
 resource "aws_s3_bucket" "s3_website_buckets"{
     count = length(var.s3_bucket_names)
     bucket = var.s3_bucket_names[count.index]
