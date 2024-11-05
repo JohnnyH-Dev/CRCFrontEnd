@@ -1,9 +1,11 @@
-resource "aws_route53_zone" "main" {
-    name = "johnnyhuang.dev"
-}
-
 resource "aws_route53_record" "main" {
-    zone_id = aws_route53_zone.main.zone_id
-    name = "johnnyhuang.dev"
+    name = var.subdomain
     type = "A"
+    zone_id = var.hosted_zone_id
+
+    alias {
+      evaluate_target_health = false
+      name = aws_cloudfront_distribution.main.domain_name
+      zone_id = aws_cloudfront_distribution.main.hosted_zone_id
+    }
 }

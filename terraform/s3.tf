@@ -18,5 +18,9 @@ resource "aws_s3_bucket_website_configuration" "s3_subroot_website" {
     index_document {
       suffix = "index.html"
     }
-}
+}   
 
+resource "aws_s3_bucket_policy" "main" {
+    bucket = aws_s3_bucket.s3_website_buckets[1].id
+    policy = data.aws_iam_policy_document.cloudfront_oac.json
+}
