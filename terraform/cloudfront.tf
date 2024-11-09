@@ -13,8 +13,8 @@ resource "aws_cloudfront_distribution" "main" {
     wait_for_deployment = true
 
     default_cache_behavior {
-      allowed_methods = [ "GET", "HEAD", "POST", "OPTIONS"]
-      cached_methods = [ "GET", "HEAD", "POST", "OPTIONS"]
+      allowed_methods = [ "GET", "HEAD"]
+      cached_methods = [ "GET", "HEAD"]
       target_origin_id = aws_s3_bucket.s3_website_buckets[1].id
       viewer_protocol_policy = "redirect-to-https"
 
