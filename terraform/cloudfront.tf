@@ -19,6 +19,13 @@ resource "aws_cloudfront_distribution" "main" {
       viewer_protocol_policy = "redirect-to-https"
       cache_policy_id = "658327ea-f89d-4fab-a63d-7e88639e58f6"
 
+      forwarded_values {
+        headers = ["Origin"]
+        query_string = "false"
+        cookies {
+          forward = "none"
+        }
+      }
     }
 
     origin {
