@@ -1,0 +1,51 @@
+name: Frontend Tests
+
+on: [push, pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run HTML Lint
+        run: npx htmlhint "website/index.html"
+
+      - name: Run JavaScript Lint
+        run: npx eslint "website/js/**/*.js"
+
+  terraform:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: 1.9.8
+          
+      - name: Initialize Terraform
+        run: terraform init
+        working-directory: terraform
+
+      - name: Format Check
+        run: terraform fmt -check
+        working-directory: terraform
+
+      - name: Validate Terraform
+        run: terraform validate
+        working-directory: terraform
+
+  e2e-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Cypress
+        run: npm install cypress
+
+      - name: Run Cypress Tests
+        run: npx cypress run
