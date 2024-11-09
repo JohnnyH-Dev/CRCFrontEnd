@@ -1,5 +1,5 @@
 // main.js
-const counterElement = document.getElementById('visitCount');
+const counterElement = document.getElementById('visitor_counter');
 
 // Send a POST request to the API endpoint
 fetch('https://trhleblcpb.execute-api.us-east-1.amazonaws.com/default/IncrementVisitorCounter', {
