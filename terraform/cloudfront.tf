@@ -13,11 +13,10 @@ resource "aws_cloudfront_distribution" "main" {
     wait_for_deployment = true
 
     default_cache_behavior {
-      allowed_methods = [ "GET", "HEAD", "OPTIONS"]
-      cached_methods = [ "GET", "HEAD", "OPTIONS"]
+      allowed_methods = [ "GET", "HEAD", "POST", "OPTIONS"]
+      cached_methods = [ "GET", "HEAD", "POST", "OPTIONS"]
       target_origin_id = aws_s3_bucket.s3_website_buckets[1].id
       viewer_protocol_policy = "redirect-to-https"
-      cache_policy_id = "658327ea-f89d-4fab-a63d-7e88639e58f6"
 
       forwarded_values {
         headers = ["Origin"]
@@ -46,3 +45,4 @@ resource "aws_cloudfront_distribution" "main" {
       ssl_support_method = "sni-only"
     }
 }
+
