@@ -2,6 +2,10 @@
 
 Hello, welcome to the frontend repository for my Cloud Resume Challenge! This repository contains all files and configurations necessary to host and serve the frontend of my personal cloud resume website.
 
+Check out my website: [www.johnnyhuang.dev](https://www.johnnyhuang.dev/) 
+
+Check out the blog: https://leeward-fig-f44.notion.site/Johnny-s-CRC-Blog-11b96dded323802081bec3c41125e3c5
+
 ## Project Overview
 
 ![Diagram of Cloud Resume Challenge Architecture](images/CRCDiagram.png)
