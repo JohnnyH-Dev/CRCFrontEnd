@@ -60,8 +60,8 @@ This project is the frontend component of my Cloud Resume Challenge, hosted on A
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/cloud-resume-frontend.git
-   cd cloud-resume-frontend
+   git clone https://github.com/JohnnyH-Dev/CRCFrontEnd.git
+   cd CRCFrontEnd
 
 2. **Terraform Infrastructure Setup**
    ```bash
