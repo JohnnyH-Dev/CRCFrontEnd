@@ -4,7 +4,7 @@ Hello, welcome to the frontend repository for my Cloud Resume Challenge! This re
 
 ## Project Overview
 
-![Diagram of Cloud Resume Challenge Architecture](images/CRCdiagram.png)
+![Diagram of Cloud Resume Challenge Architecture](images/CRCDiagram.png)
 
 This project is the frontend component of my Cloud Resume Challenge, hosted on AWS. The setup utilizes a variety of AWS services for the website's infrastructure. Below are the services that make up the frontend architecture:
 
@@ -58,6 +58,7 @@ This project is the frontend component of my Cloud Resume Challenge, hosted on A
    cd cloud-resume-frontend
 
 2. **Terraform Infrastructure Setup**
+   ```bash
    cd terraform
    terraform init
    terraform apply
